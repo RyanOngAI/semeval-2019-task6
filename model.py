@@ -37,7 +37,9 @@ class Offensive_Detector():
     def load_build_embeddings(self):
         print("Loading and building embedding matrix")
         embeddings_index = dict()
-        f = open('glove.twitter.27B.100d.txt')
+#        f = open('glove.twitter.27B.200d.txt') 
+#        f = open('glove.twitter.27B.100d.txt')
+        f = open('glove.42B.300d.txt') # LSTM Console 1
         for line in f:
             values = line.split()
             word = values[0]
@@ -45,7 +47,7 @@ class Offensive_Detector():
             embeddings_index[word] = coefs
         f.close()
 
-        embedding_matrix = np.zeros((self.hparams['vocab_size'], 100))
+        embedding_matrix = np.zeros((self.hparams['vocab_size'], 300))
         for word, index in self.hparams['tokenizer'].word_index.items():
             if index > self.hparams['vocab_size'] - 1:
                 break
@@ -77,11 +79,11 @@ class Offensive_Detector():
         if self.hparams['use_pretrained_embedding'] == True:
             print("\n")
             print("Using pretrained embedding matrix")
-            model.add(Embedding(self.hparams['vocab_size'], 100, input_length=50, weights=[self.embedding_matrix], trainable=False)) #trainable = false/true
+            model.add(Embedding(self.hparams['vocab_size'], 300, input_length=50, weights=[self.embedding_matrix], trainable=False)) #trainable = false/true
         else:
             model.add(Embedding(self.hparams['vocab_size'], 100, input_length=50))
-        model.add(Bidirectional(LSTM(100, return_sequences = True, dropout=0.35, recurrent_dropout=0.35)))
-        # model.add(Bidirectional(GRU(100, return_sequences = True, dropout=0.35, recurrent_dropout=0.35)))
+        model.add(Bidirectional(LSTM(300, return_sequences = True, dropout=0.35, recurrent_dropout=0.35)))
+#        model.add(Bidirectional(GRU(300, return_sequences = True, dropout=0.35, recurrent_dropout=0.35)))
         if self.hparams['convolutional_layer'] == True:
             model.add(Conv1D(128, 4, activation='relu'))
             model.add(MaxPooling1D(pool_size=4))
@@ -196,7 +198,7 @@ if __name__ == "__main__":
                    'task':                                  'subtask_a',
                    }
     
-    model_parameters = {'epochs':                           5,
+    model_parameters = {'epochs':                           3,
                         'classes':                          None,
                         'num_classes':                      None,
                         'tokenizer':                        None,
@@ -312,17 +314,17 @@ if __name__ == "__main__":
             print('\n')
             print("Predicting test set A for submission...")
             data = OFF_Detector.predict("./Test A Release/testset-taska.tsv", environment['task'])
-            data[['id', 'label']].to_csv('task_A_submission2.csv', index=False)
+            data[['id', 'label']].to_csv('task_A_submission4.csv', index=False)
         if environment['task'] == 'subtask_b':
             print('\n')
             print("Predicting test set B for submission...")
             data = OFF_Detector.predict("./Test B Release/testset-taskb.tsv", environment['task'])
-            data[['id', 'label']].to_csv('task_B_submission2.csv', index=False)
+            data[['id', 'label']].to_csv('task_B_submission3.csv', index=False)
         if environment['task'] == 'subtask_c':
             print('\n')
             print("Predicting test set C for submission...")
             data = OFF_Detector.predict("./Test C Release/test_set_taskc.tsv", environment['task'])
-            data[['id', 'label']].to_csv('task_C_submission2.csv', index=False)
+            data[['id', 'label']].to_csv('task_C_submission3.csv', index=False)
     
 #    Grid search
 #    optimizers = ['rmsprop', 'adam']

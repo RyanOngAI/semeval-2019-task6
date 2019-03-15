@@ -1,0 +1,175 @@
+This file contains details for all of your submissions.
+
+Your best runs were:
+	* Sub-task A, RyanOng CodaLab #548951
+	* Sub-task B, RyanOng CodaLab #548986
+	* Sub-task C, RyanOng CodaLab #547628
+
+You will find detailed results for all your submissions below.
+
+====
+
+Sub-task A, RyanOng CodaLab #546023
+
+# SUBMITTED FILE: Task_A_submission.csv
+
+# DESCRIPTION:
+System descriptions
+
+- The model used to generate the predictions is CNN-GRU model.
+
+- Used word-embeddings : GLOVE trained using Twitter dataset
+
+- Dropout rate of 50%
+
+- Vocabulary size of 20000
+
+- Processed tweets : Lowercased all words and removed url, hashtags, cashtags, twitter handles and RT. I also removed the @USER and URL tokens
+
+# RESULTS:
+
+Macro-F1: 0.744396570734
+Overall Accuracy: 0.81976744186
+
+Per-class performance:
+             precision    recall  f1-score   samples
+
+        NOT     0.8289    0.9452    0.8832       620
+        OFF     0.7778    0.4958    0.6056       240
+
+avg / total     0.8146    0.8198    0.8057       860
+
+
+====
+
+Sub-task A, RyanOng CodaLab #548951
+
+# SUBMITTED FILE: task_A_submission2.csv
+
+# DESCRIPTION:
+System descriptions
+
+- The model used to generate the predictions is CNN-GRU model.
+
+- Used word-embeddings : GLOVE trained using Twitter dataset
+
+- Dropout rate of 50%
+
+- Vocabulary size of 20000
+
+- Processed tweets : Lowercased all words and removed url, hashtags, cashtags, twitter handles and RT. I also removed the @USER and URL tokens
+
+# RESULTS:
+
+Macro-F1: 0.754285714286
+Overall Accuracy: 0.818604651163
+
+Per-class performance:
+             precision    recall  f1-score   samples
+
+        NOT     0.8412    0.9226    0.8800       620
+        OFF     0.7333    0.5500    0.6286       240
+
+avg / total     0.8111    0.8186    0.8098       860
+
+
+====
+
+Sub-task B, RyanOng CodaLab #547319
+
+# SUBMITTED FILE: Task_B_submission.csv
+
+# DESCRIPTION:
+System descriptions
+
+- The model used to generate the predictions is CNN-GRU model.
+
+- Used word-embeddings : GLOVE trained using Twitter dataset
+
+- Dropout rate of 50%
+
+- Vocabulary size of 20000
+
+- Processed tweets : Lowercased all words and removed url, hashtags, cashtags, twitter handles and RT. I also removed the @USER and URL tokens
+
+# RESULTS:
+
+Macro-F1: 0.566666666667
+Overall Accuracy: 0.675
+
+Per-class performance:
+             precision    recall  f1-score   samples
+
+        TIN     0.9592    0.6620    0.7833       213
+        UNT     0.2258    0.7778    0.3500        27
+
+avg / total     0.8767    0.6750    0.7346       240
+
+
+====
+
+Sub-task B, RyanOng CodaLab #548986
+
+# SUBMITTED FILE: task_B_submission2.csv
+
+# DESCRIPTION:
+System descriptions
+
+- The model used to generate the predictions is CNN-GRU model.
+
+- Used word-embeddings : GLOVE trained using Twitter dataset
+
+- Dropout rate of 50%
+
+- Vocabulary size of 20000
+
+- Processed tweets : Lowercased all words and removed url, hashtags, cashtags, twitter handles and RT. I also removed the @USER and URL tokens
+
+# RESULTS:
+
+Macro-F1: 0.651960942284
+Overall Accuracy: 0.8125
+
+Per-class performance:
+             precision    recall  f1-score   samples
+
+        TIN     0.9421    0.8404    0.8883       213
+        UNT     0.3200    0.5926    0.4156        27
+
+avg / total     0.8721    0.8125    0.8352       240
+
+
+====
+
+Sub-task C, RyanOng CodaLab #547628
+
+# SUBMITTED FILE: Task_C_submission.csv
+
+# DESCRIPTION:
+System descriptions
+
+- The model used to generate the predictions is CNN-GRU model.
+
+- Used word-embeddings : GLOVE trained using Twitter dataset
+
+- Dropout rate of 50%
+
+- Vocabulary size of 20000
+
+- Processed tweets : Lowercased all words and removed url, hashtags, cashtags, twitter handles and RT. I also removed the @USER and URL tokens
+
+# RESULTS:
+
+Macro-F1: 0.462704420148
+Overall Accuracy: 0.647887323944
+
+Per-class performance:
+             precision    recall  f1-score   samples
+
+        GRP     0.7015    0.6026    0.6483        78
+        IND     0.6233    0.9100    0.7398       100
+        OTH     0.0000    0.0000    0.0000        35
+
+avg / total     0.5495    0.6479    0.5847       213
+
+
